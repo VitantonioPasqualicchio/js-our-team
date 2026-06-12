@@ -3,11 +3,105 @@
     font-weight: 400;
     font-style: normal;
 
-    max-width: fit-content;
-    margin:50px auto;
+    /* max-width: fit-content;
+    margin:50px auto; */
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: cadetblue;
+    background-color: darkgrey;
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 50px 0;
 }
 
 p {
     max-width: fit-content;
     margin:50px 25px;
+}
+
+h3 {
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
+    margin: 20px 0;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: darkslategray;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.team-card {
+    flex-basis: 370px;
+
+    margin-top: 50px;
+    margin-right: 28px;
+}
+
+.team-container::after {
+    flex:auto;
+
+    content: '';
+}
+
+/* Si usa quando hai una griglia di card (es. 3 per riga). 
+Se nell'ultima riga hai solo 1 o 2 card, l'elemento vuoto 
+alla fine si espande per riempire lo spazio rimasto, evitando 
+che le card rimaste si allarghino in modo strano o si posizionino male */
+
+.card-image {
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+/* overflow: hidden;: Qualsiasi cosa provi a uscire dai confini fisici
+ di questo contenitore viene tagliata e nascosta. È fondamentale se 
+ ad esempio vuoi dare dei bordi arrotondati (border-radius) alla 
+ card: impedisce all'immagine interna di "sbordare" oltre l'angolo 
+ arrotondato. È utilissimo anche se in futuro vorrai fare un effetto 
+ di zoom sull'immagine al passaggio del mouse (l'immagine si 
+ ingrandisce ma resta dentro i bordi).
+
+cursor: pointer;: Trasforma il cursore del mouse nella classica manina
+ quando l'utente passa sopra l'immagine. Comunica visivamente che 
+ l'immagine (o l'intera card) è cliccable e porta da qualche parte. */
+
+.card-image img {
+    display: block;
+    
+    max-width: 100%;
+
+    transition: all 1s;
+}
+
+.card-image:hover img {
+    transform: scale(1.1, 1.1);
+
+    opacity: 0.9;
 }

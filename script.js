@@ -37,4 +37,30 @@ const teamMembers = [
   }
 ];
 
-console.table(teamMembers);
+const teamContainerDiv = document.querySelector('.team-container');
+
+const teamMembersCardTemplate = member => `
+<div class="team-card">
+    <div class="card-image">
+        <img src="${member.img}" alt="${member.name}">
+    </div>
+    <div class="card-text">
+        <h3>"${member.name}"</h3>
+        <p>"${member.role}"</p>
+    </div>  
+</div>
+`;
+
+const renderTeam = () => {
+
+let html = '';
+for (let i = 0; i < teamMembers.length; i++) {
+    const member = teamMembers[i];
+
+    html += teamMembersCardTemplate(member);
+}
+
+teamContainerDiv.innerHTML = html;
+}
+
+renderTeam();
