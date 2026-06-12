@@ -36,3 +36,5 @@ const teamMembers = [
     img: "img/LuciaD'Abramo.jpeg"
   }
 ];
+
+console.table(teamMembers);
