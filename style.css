@@ -15,7 +15,6 @@
 }
 
 body {
-    color: cadetblue;
     background-color: darkgrey;
 
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -32,7 +31,8 @@ section {
     padding: 50px 0;
 }
 
-p {
+/* Colpisce solo i tag <p> dentro il tag selezionato*/
+div.header > p {
     max-width: fit-content;
     margin:50px 25px;
 }
@@ -50,6 +50,11 @@ h3 {
     color: darkslategray;
 }
 
+p {
+    text-align: center;
+}
+
+/* display flex per rendere flex il genitore */
 .team-container {
     display: flex;
     flex-wrap: wrap;
@@ -59,8 +64,7 @@ h3 {
 .team-card {
     flex-basis: 370px;
 
-    margin-top: 50px;
-    margin-right: 28px;
+     margin: 25px 14px;
 }
 
 .team-container::after {
@@ -98,6 +102,11 @@ cursor: pointer;: Trasforma il cursore del mouse nella classica manina
     max-width: 100%;
 
     transition: all 1s;
+
+    width: 300px;
+    height: 365px;
+
+    margin: auto;
 }
 
 .card-image:hover img {
